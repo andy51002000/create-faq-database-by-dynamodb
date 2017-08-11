@@ -1,4 +1,5 @@
 """Put item to dynamodb"""
+#http://boto3.readthedocs.io/en/latest/guide/dynamodb.html
 
 def read_json(file_name):
     """Return the pathname of the KOS root directory."""
@@ -6,12 +7,7 @@ def read_json(file_name):
     with open(file_name) as json_data:
         d = json.load(json_data)
         for data in d["items"]:
-            Item={
-                'ask':data['ask'],
-                'type':'none',
-                'ans':data['ans']
-            }
-            yield Item 
+            yield data 
 
 
 
